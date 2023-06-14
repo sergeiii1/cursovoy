@@ -27,4 +27,4 @@ ViewModel.
 Для создания пользовательского интерфейса используется платформа JavaFX.
 
 ## Приглашение к сотрудничеству
-Загрузите исходные тексты или клонируйте их с помощью команды git clone в выбранный каталог: git clone [https://github.com/hBdish/cursJavaFX](https://github.com/hBdish/cursJavaFX) и создайте ветку
+Загрузите исходные тексты или клонируйте их с помощью команды git clone в выбранный каталог: git clone [https://github.com/sergeiii1/cursovoy](https://github.com/sergeiii1/cursovoy) и создайте ветку
