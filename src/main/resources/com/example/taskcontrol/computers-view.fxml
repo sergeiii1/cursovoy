@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<HBox alignment="CENTER" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.taskcontrol.ComputersController">
+   <children>
+      <ListView fx:id="computersList" prefHeight="200.0" prefWidth="200.0" />
+      <VBox alignment="CENTER">
+         <children>
+            <Button mnemonicParsing="false" onAction="#admin" text="Администрирование" />
+            <Button mnemonicParsing="false" onAction="#select" text="Открыть" />
+         </children>
+      </VBox>
+   </children>
+</HBox>

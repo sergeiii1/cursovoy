@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.taskcontrol.HelloController">
+   <center>
+       <SplitPane dividerPositions="0.5" prefHeight="289.0" prefWidth="447.0">
+           <ListView fx:id="computersList" />
+           <ListView fx:id="eventList" />
+       </SplitPane>
+   </center>
+   <top>
+       <VBox BorderPane.alignment="CENTER">
+           <FlowPane>
+               <Label text="Компьютер" />
+               <TextField fx:id="computerTitle" prefHeight="25.0" prefWidth="133.0" />
+           </FlowPane>
+           <ToolBar prefHeight="40.0" prefWidth="200.0">
+               <Button mnemonicParsing="false" onAction="#addComputer" text="Добавить компьютер" />
+               <Button mnemonicParsing="false" onAction="#removeComputer" text="Удалить компьютер" />
+            <Button mnemonicParsing="false" onAction="#fix" text="Исправить" />
+            <Button mnemonicParsing="false" onAction="#copyComputer" text="Копировать" />
+           </ToolBar>
+       </VBox>
+   </top>
+</BorderPane>

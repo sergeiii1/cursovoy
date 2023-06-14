@@ -1,0 +1,82 @@
+@startuml
+class com.example.taskcontrol.Computers {
+~ ObservableList<Computer> observableList
++ void add(String)
++ void add(String,String,String,String)
++ void remove(Computer)
+}
+class com.example.taskcontrol.Computer {
+~ String title
+~ String user
+~ String password
+~ String domain
+~ EventLogIterator iterator
+~ Thread thread
+~ ObservableList<EventLogRecord> events
+- void contextMenuOtherPC(double,double)
++ void update(Date)
++ void stop()
++ String toString()
+}
+class com.example.taskcontrol.Computer$ComputerBuilder {
+~ String title
+~ String user
+~ String password
+~ String domain
++ ComputerBuilder setDomain(String)
++ ComputerBuilder setPassword(String)
++ ComputerBuilder setUser(String)
++ Computer build()
+}
+class com.example.taskcontrol.HelloController {
++ ListView<Computer> computersList
++ ListView<EventLogRecord> eventList
++ TextField computerTitle
++ TextField userText
++ TextField passwordText
++ TextField domainText
+~ Computers computers
+~ Date startTime
++ void initialize(URL,ResourceBundle)
+- void updateList()
+- void addComputer()
+- void removeComputer()
+}
+class com.example.taskcontrol.EventLogRecord {
+- WinNT.EVENTLOGRECORD _record
+- int _recordId
+- String _source
++ int getLength()
++ Date getDateEvent()
++ String getSource()
++ String getEventType()
++ String toString()
+}
+class com.example.taskcontrol.HelloApplication {
++ void start(Stage)
++ {static} void main(String[])
+}
+class com.example.taskcontrol.EventLogIterator {
+- WinNT.HANDLE _h
+- Memory _buffer
+- boolean _done
+- int _dwRead
+- Pointer _pevlr
+- int _dwRecord
+~ Date startTime
++ void close()
++ boolean hasNext()
++ EventLogRecord next()
+- void read()
++ Iterator<EventLogRecord> iterator()
+}
+
+
+javafx.scene.text.Text <|-- com.example.taskcontrol.Computer
+com.example.taskcontrol.Computer +.. com.example.taskcontrol.Computer$ComputerBuilder
+javafx.fxml.Initializable <|.. com.example.taskcontrol.HelloController
+javafx.scene.text.Text <|-- com.example.taskcontrol.EventLogRecord
+javafx.application.Application <|-- com.example.taskcontrol.HelloApplication
+com.example.taskcontrol.Iterable <|.. com.example.taskcontrol.EventLogIterator
+java.util.Iterator <|.. com.example.taskcontrol.EventLogIterator
+@enduml
